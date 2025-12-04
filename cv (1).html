@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Al-Bohasi | Mechatronics Engineer & AI Developer</title>
+    <meta name="description" content="Mohammad Al-Bohasi - Mechatronics Engineering Student specializing in Python development, AI algorithms, and intelligent systems integration.">
+    <meta name="keywords" content="Mechatronics Engineering, Python Developer, AI Algorithms, PyQt5, Encryption Tools, Data Analysis, Jordan Developer, Amman Engineer">
+    <meta property="og:title" content="Mohammad Al-Bohasi - Professional Portfolio">
+    <meta property="og:description" content="Mechatronics Engineering Student | AI & Python Developer | 8+ Certifications | 7+ Projects">
+    <meta property="og:type" content="website">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mohammad Al-Bohasi",
+        "jobTitle": "Mechatronics Engineering Student & Python Developer",
+        "url": "https://albohasi.com",
+        "sameAs": [
+            "https://www.linkedin.com/in/mohammad-albohasi-787151341",
+            "https://github.com/bohasi",
+            "https://www.credly.com/users/mohammad-albohasi"
+        ],
+        "email": "mailto:albohasi.mohammad@gmail.com",
+        "telephone": "+962785416479",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Amman",
+            "addressCountry": "Jordan"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Al-Balqa Applied University"
+        },
+        "knowsAbout": [
+            "Python Programming",
+            "AI Algorithms",
+            "Mechatronics Systems",
+            "GUI Development",
+            "Data Analysis",
+            "Encryption Tools"
+        ],
+        "hasCredential": [
+            "Python Essentials 1 & 2 (Cisco)",
+            "Data Analysis Using Python (IBM)",
+            "Introduction to Cybersecurity (Cisco)",
+            "AI for Beginners (HP Life)",
+            "Networking Basics (Cisco)"
+        ]
+    }
+    </script>
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --transition: all 0.3s ease;
+        }
+        body {
+            background: linear-gradient(135deg, var(--dark), #1e293b);
+            color: var(--light);
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+        
+        /* Fixed Navbar Styling */
+        .fixed-nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .fixed-nav.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 17px;
+            width: 2px;
+            height: calc(100% + 13px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        
+        /* Updated Typewriter for better responsiveness */
+        .typewriter-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 2px solid var(--primary);
+            white-space: normal;
+            width: 100%;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary) }
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            width: 300px;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .skill-item {
+            position: relative;
+            cursor: pointer;
+        }
+        .skill-item:hover .skill-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-10px);
+        }
+        .skill-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: rgba(30, 41, 59, 0.95) transparent transparent transparent;
+        }
+        .project-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin: 0.25rem 0.25rem 0.25rem 0;
+        }
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Improved Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 5rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+        }
+        .mobile-menu.open {
+            right: 0;
+        }
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 9998;
+        }
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        
+        /* Form Improvements */
+        .form-success {
+            display: none;
+            padding: 1rem;
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        /* Achievement Cards */
+        .achievement-card {
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid transparent;
+            transition: var(--transition);
+        }
+        .achievement-card:hover {
+            border-top-color: var(--primary);
+        }
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Hero Section Improvements */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px; /* Space for fixed navbar */
+        }
+        
+        .hero-avatar {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .glass { background: white !important; border: 1px solid #ddd !important; }
+            .gradient-text { background: none !important; color: #1a56db !important; }
+            .section-title::after { background: #1a56db !important; }
+            .skill-progress { background: #1a56db !important; }
+            a { color: #1a56db !important; text-decoration: underline; }
+        }
+        
+        /* Accessibility Improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .floating, .pulse, .typewriter, .scroll-down, .skill-progress {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+        
+        /* High Contrast Support */
+        @media (prefers-contrast: high) {
+            .glass {
+                border: 2px solid white;
+                background: rgba(0, 0, 0, 0.9);
+            }
+            .gradient-text {
+                color: #60a5fa !important;
+                background: none !important;
+            }
+        }
+        
+        /* Performance Optimizations */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+        
+        /* Responsive Typography */
+        @media (max-width: 768px) {
+            .typewriter {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+                display: block;
+            }
+            
+            .hero-section {
+                padding-top: 100px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .hero-avatar {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+        <p class="text-lg gradient-text">Loading Portfolio...</p>
+    </div>
+
+    <!-- Skip to Content -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed-nav fixed w-full py-4 no-print" id="mainNav" aria-label="Main navigation">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text" aria-label="Mohammad Al-Bohasi Portfolio">M.A</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="hover:text-blue-400 transition-colors">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                <a href="#achievements" class="hover:text-blue-400 transition-colors">Achievements</a>
+                <a href="#certifications" class="hover:text-blue-400 transition-colors">Certifications</a>
+                <a href="#education" class="hover:text-blue-400 transition-colors">Education</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" 
+                    id="mobileMenuButton" 
+                    aria-label="Open mobile menu"
+                    aria-expanded="false">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="absolute top-6 right-6 text-2xl text-white p-2 rounded-lg hover:bg-white/10 transition-colors" 
+                id="closeMobileMenu" 
+                aria-label="Close mobile menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col space-y-4">
+            <a href="#home" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">Home</a>
+            <a href="#about" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">About</a>
+            <a href="#skills" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">Skills</a>
+            <a href="#projects" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">Projects</a>
+            <a href="#achievements" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">Achievements</a>
+            <a href="#certifications" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">Certifications</a>
+            <a href="#education" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">Education</a>
+            <a href="#contact" class="text-xl py-3 px-4 rounded-lg hover:bg-white/10 transition-colors" onclick="closeMobileMenu()">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-indigo-900/20 z-0"></div>
+            <div class="container mx-auto px-6 text-center z-10">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Avatar -->
+                    <div class="hero-avatar">
+                        <div class="w-full h-full rounded-full bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-500 flex items-center justify-center text-white text-5xl font-bold border-4 border-white/20 pulse floating">
+                            <span class="avatar-text">MA</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Title -->
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                        Mohammad <span class="gradient-text">Al-Bohasi</span>
+                    </h1>
+                    
+                    <!-- Subtitle with improved typewriter -->
+                    <div class="typewriter-container mb-6">
+                        <div class="typewriter text-xl md:text-2xl text-blue-300 font-medium">
+                            Mechatronics Engineering Student | AI & Python Developer
+                        </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        Passionate about programming, intelligent systems, and their integration with technology. 
+                        Specializing in Python development and AI algorithms with practical experience in building 
+                        real-world applications.
+                    </p>
+                    
+                    <!-- Actions -->
+                    <div class="flex flex-wrap justify-center gap-4 mb-12">
+                        <a href="#contact" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="px-6 py-3 glass hover:bg-white/10 rounded-lg font-medium transition-colors border border-white/20">
+                            View Projects
+                        </a>
+                        <a href="#achievements" class="px-6 py-3 glass hover:bg-white/10 rounded-lg font-medium transition-colors border border-white/20">
+                            My Achievements
+                        </a>
+                    </div>
+                    
+                    <!-- Stats Preview -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">8+</div>
+                            <p class="text-sm text-gray-400">Certifications</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">7+</div>
+                            <p class="text-sm text-gray-400">Projects</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">6+</div>
+                            <p class="text-sm text-gray-400">Skills</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl md:text-3xl font-bold gradient-text">3.44</div>
+                            <p class="text-sm text-gray-400">GPA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-down no-print">
+                <a href="#about" class="text-white text-2xl" aria-label="Scroll to about section">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="glass rounded-2xl p-8 card-hover">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Background & Passion</h3>
+                        <div class="space-y-4">
+                            <p class="text-gray-300">
+                                I am a sophomore Mechatronics Engineering student at Al-Balqa Applied University with a deep passion for programming, 
+                                intelligent systems, and their integration with cutting-edge technology.
+                            </p>
+                            <p class="text-gray-300">
+                                I specialize in Python development with hands-on experience in building practical applications 
+                                including encryption tools, GUI applications using PyQt5, and AI-powered systems.
+                            </p>
+                            <p class="text-gray-300">
+                                Currently, I'm focused on advancing my expertise in artificial intelligence algorithms and 
+                                exploring how to build AI-based systems that intelligently interact with mechanical components.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass rounded-xl p-6 text-center card-hover hover:border-blue-500/50 border border-transparent">
+                            <div class="text-3xl text-blue-400 mb-2">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="font-bold mb-1">Python Dev</h3>
+                            <p class="text-sm text-gray-400">Expert Level</p>
+                        </div>
+                        <div class="glass rounded-xl p-6 text-center card-hover hover:border-purple-500/50 border border-transparent">
+                            <div class="text-3xl text-purple-400 mb-2">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="font-bold mb-1">AI Systems</h3>
+                            <p class="text-sm text-gray-400">Advanced Level</p>
+                        </div>
+                        <div class="glass rounded-xl p-6 text-center card-hover hover:border-green-500/50 border border-transparent">
+                            <div class="text-3xl text-green-400 mb-2">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="font-bold mb-1">Mechatronics</h3>
+                            <p class="text-sm text-gray-400">Intermediate</p>
+                        </div>
+                        <div class="glass rounded-xl p-6 text-center card-hover hover:border-yellow-500/50 border border-transparent">
+                            <div class="text-3xl text-yellow-400 mb-2">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3 class="font-bold mb-1">Projects</h3>
+                            <p class="text-sm text-gray-400">7+ Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-indigo-900/10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Technical Skills</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Programming & Development</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">Python</span>
+                                    <span class="text-blue-400">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">PyQt5</span>
+                                    <span class="text-blue-400">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">C++</span>
+                                    <span class="text-blue-400">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-medium">SQL</span>
+                                    <span class="text-blue-400">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Areas of Expertise</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <div class="skill-item">
+                                <span class="glass px-4 py-2 rounded-full inline-block hover:bg-blue-500/20 transition-colors">AI Algorithms</span>
+                                <div class="skill-tooltip">
+                                    <h4 class="font-bold text-blue-400 mb-2">AI Algorithms</h4>
+                                    <p class="text-sm text-gray-300 mb-2">Developing intelligent systems and machine learning models</p>
+                                    <div class="mt-2">
+                                        <span class="project-badge">Matrix Calculator</span>
+                                        <span class="project-badge">AI Certification</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="glass px-4 py-2 rounded-full inline-block hover:bg-purple-500/20 transition-colors">Mechatronics Systems</span>
+                                <div class="skill-tooltip">
+                                    <h4 class="font-bold text-blue-400 mb-2">Mechatronics Systems</h4>
+                                    <p class="text-sm text-gray-300 mb-2">Integration of mechanical systems with electronics and programming</p>
+                                    <div class="mt-2">
+                                        <span class="project-badge">Mechatronics Engineering</span>
+                                        <span class="project-badge">University Projects</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="glass px-4 py-2 rounded-full inline-block hover:bg-green-500/20 transition-colors">GUI Development</span>
+                                <div class="skill-tooltip">
+                                    <h4 class="font-bold text-blue-400 mb-2">GUI Development</h4>
+                                    <p class="text-sm text-gray-300 mb-2">Creating user-friendly graphical interfaces for applications</p>
+                                    <div class="mt-2">
+                                        <span class="project-badge">PyQt5 Calculator</span>
+                                        <span class="project-badge">Encryption System</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="glass px-4 py-2 rounded-full inline-block hover:bg-red-500/20 transition-colors">Encryption Tools</span>
+                                <div class="skill-tooltip">
+                                    <h4 class="font-bold text-blue-400 mb-2">Encryption Tools</h4>
+                                    <p class="text-sm text-gray-300 mb-2">
+                                        Developing secure encryption systems using <strong>cryptography</strong> library with 
+                                        <strong>AES-GCM</strong> and <strong>PBKDF2</strong> key derivation for 128-bit key generation
+                                    </p>
+                                    <div class="mt-2">
+                                        <span class="project-badge">Python Encryption System</span>
+                                        <span class="project-badge">Password Generator</span>
+                                        <span class="project-badge">cryptography</span>
+                                        <span class="project-badge">AES-GCM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="glass px-4 py-2 rounded-full inline-block hover:bg-cyan-500/20 transition-colors">Data Analysis</span>
+                                <div class="skill-tooltip">
+                                    <h4 class="font-bold text-blue-400 mb-2">Data Analysis</h4>
+                                    <p class="text-sm text-gray-300 mb-2">Processing and analyzing data to extract insights</p>
+                                    <div class="mt-2">
+                                        <span class="project-badge">Data Analysis Certification</span>
+                                        <span class="project-badge">Matrix Calculator</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="glass px-4 py-2 rounded-full inline-block hover:bg-pink-500/20 transition-colors">Data Visualization</span>
+                                <div class="skill-tooltip">
+                                    <h4 class="font-bold text-blue-400 mb-2">Data Visualization</h4>
+                                    <p class="text-sm text-gray-300 mb-2">Creating visual representations of data and information</p>
+                                    <div class="mt-2">
+                                        <span class="project-badge">Data Visualization Certification</span>
+                                        <span class="project-badge">QR Code Generator</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Projects & Experience</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-12">
+                        <!-- Python Encryption System -->
+                        <div class="timeline-item">
+                            <div class="glass rounded-xl p-6 card-hover border-l-4 border-blue-500">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Python Encryption System</h3>
+                                <p class="text-blue-400 mb-3">Developer • 2025 - Present (1 week intensive)</p>
+                                <p class="text-gray-300 mb-4">
+                                    Developed a secure text and file encryption tool using Python's <strong>cryptography</strong> library. 
+                                    The system implements <strong>AES-GCM</strong> encryption with automatic generation of 128-bit keys from user passwords 
+                                    using PBKDF2 key derivation. Features include secure key management, file encryption/decryption, 
+                                    and an intuitive PyQt5 interface with password strength validation.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="project-badge">Python</span>
+                                    <span class="project-badge">cryptography</span>
+                                    <span class="project-badge">PyQt5</span>
+                                    <span class="project-badge">Security</span>
+                                    <span class="project-badge">AES-GCM</span>
+                                    <span class="project-badge">PBKDF2</span>
+                                    <span class="project-badge">Key Derivation</span>
+                                </div>
+                                <a href="https://github.com/bohasi" target="_blank" class="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors">
+                                    <i class="fab fa-github mr-2"></i>View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Matrix Calculator Web -->
+                        <div class="timeline-item">
+                            <div class="glass rounded-xl p-6 card-hover border-l-4 border-purple-500">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Matrix Calculator Web</h3>
+                                <p class="text-blue-400 mb-3">Full Stack Developer • 2025</p>
+                                <p class="text-gray-300 mb-4">
+                                    A responsive web application for matrix operations built with HTML, CSS, and JavaScript. 
+                                    Supports addition, multiplication, determinant, inverse, transpose, and eigenvalue calculations 
+                                    with real-time validation and error handling.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="project-badge">HTML</span>
+                                    <span class="project-badge">CSS</span>
+                                    <span class="project-badge">JavaScript</span>
+                                    <span class="project-badge">Linear Algebra</span>
+                                    <span class="project-badge">Responsive Design</span>
+                                </div>
+                                <a href="https://github.com/bohasi/matrix-calculator-web" target="_blank" class="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors">
+                                    <i class="fab fa-github mr-2"></i>View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- PyQt5 GUI Calculator -->
+                        <div class="timeline-item">
+                            <div class="glass rounded-xl p-6 card-hover border-l-4 border-green-500">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">PyQt5 GUI Calculator</h3>
+                                <p class="text-blue-400 mb-3">Developer • 2025</p>
+                                <p class="text-gray-300 mb-4">
+                                    A basic GUI calculator built with PyQt5 that performs fundamental arithmetic operations 
+                                    including addition, subtraction, multiplication, and division. Features a clean interface 
+                                    with error handling for invalid inputs.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="project-badge">Python</span>
+                                    <span class="project-badge">PyQt5</span>
+                                    <span class="project-badge">GUI Development</span>
+                                    <span class="project-badge">Basic Arithmetic</span>
+                                </div>
+                                <a href="https://github.com/bohasi" target="_blank" class="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors">
+                                    <i class="fab fa-github mr-2"></i>View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- QR Code Generator -->
+                        <div class="timeline-item">
+                            <div class="glass rounded-xl p-6 card-hover border-l-4 border-yellow-500">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">QR Code Generator</h3>
+                                <p class="text-blue-400 mb-3">Developer • 2025</p>
+                                <p class="text-gray-300 mb-4">
+                                    A simple Python utility tool that converts URLs or text into QR codes using the <strong>qrcode</strong> library. 
+                                    The tool takes any link or text input and generates a scannable QR code image for easy sharing and accessibility.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="project-badge">Python</span>
+                                    <span class="project-badge">qrcode</span>
+                                    <span class="project-badge">Utility Tool</span>
+                                    <span class="project-badge">Simple Application</span>
+                                </div>
+                                <a href="https://github.com/bohasi" target="_blank" class="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors">
+                                    <i class="fab fa-github mr-2"></i>View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Password Generator -->
+                        <div class="timeline-item">
+                            <div class="glass rounded-xl p-6 card-hover border-l-4 border-red-500">
+                                <h3 class="text-xl font-bold mb-2 gradient-text">Password Generator & Manager</h3>
+                                <p class="text-blue-400 mb-3">Developer • 2025</p>
+                                <p class="text-gray-300 mb-4">
+                                    Built a secure password generator with customizable complexity options and an encrypted password manager 
+                                    using SQLite. Features include password strength analysis, secure storage, and export functionality.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="project-badge">Python</span>
+                                    <span class="project-badge">SQLite</span>
+                                    <span class="project-badge">Encryption</span>
+                                    <span class="project-badge">Security</span>
+                                    <span class="project-badge">Hashing</span>
+                                </div>
+                                <a href="https://github.com/bohasi" target="_blank" class="inline-flex items-center mt-2 text-blue-400 hover:text-blue-300 transition-colors">
+                                    <i class="fab fa-github mr-2"></i>View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="py-20 bg-gradient-to-br from-yellow-900/10 via-amber-900/10 to-orange-900/10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">
+                    <i class="fas fa-trophy mr-3"></i>Achievements
+                </h2>
+                
+                <!-- Achievement Cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <!-- Certification Achievement -->
+                    <div class="glass rounded-xl p-6 text-center card-hover achievement-card hover:border-blue-500 border border-transparent">
+                        <div class="achievement-icon bg-gradient-to-br from-blue-500/20 to-blue-700/20 mx-auto">
+                            <i class="fas fa-certificate text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Certification Excellence</h3>
+                        <p class="text-gray-300 mb-4">
+                            Completed <span class="text-yellow-400 font-bold">8+ professional certifications</span> 
+                            in Python, AI, Cybersecurity, and Networking within one year.
+                        </p>
+                        <div class="flex justify-center gap-2">
+                            <span class="px-2 py-1 bg-blue-500/20 text-blue-300 rounded text-xs">Python</span>
+                            <span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded text-xs">AI</span>
+                            <span class="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Security</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Projects Achievement -->
+                    <div class="glass rounded-xl p-6 text-center card-hover achievement-card hover:border-green-500 border border-transparent">
+                        <div class="achievement-icon bg-gradient-to-br from-green-500/20 to-emerald-700/20 mx-auto">
+                            <i class="fas fa-code text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Project Development</h3>
+                        <p class="text-gray-300 mb-4">
+                            Developed and deployed <span class="text-yellow-400 font-bold">7+ practical projects</span> 
+                            from encryption systems to web applications, demonstrating full-stack capabilities.
+                        </p>
+                        <div class="flex justify-center gap-2">
+                            <span class="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Full-Stack</span>
+                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-300 rounded text-xs">GUI Dev</span>
+                            <span class="px-2 py-1 bg-red-500/20 text-red-300 rounded text-xs">Security</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Portfolio Achievement -->
+                    <div class="glass rounded-xl p-6 text-center card-hover achievement-card hover:border-purple-500 border border-transparent">
+                        <div class="achievement-icon bg-gradient-to-br from-purple-500/20 to-purple-700/20 mx-auto">
+                            <i class="fas fa-laptop-code text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Portfolio Development</h3>
+                        <p class="text-gray-300 mb-4">
+                            Built a complete <span class="text-yellow-400 font-bold">professional portfolio website</span> 
+                            from scratch with modern design, animations, and responsive layout.
+                        </p>
+                        <div class="flex justify-center gap-2">
+                            <span class="px-2 py-1 bg-purple-500/20 text-purple-300 rounded text-xs">Web Design</span>
+                            <span class="px-2 py-1 bg-pink-500/20 text-pink-300 rounded text-xs">UI/UX</span>
+                            <span class="px-2 py-1 bg-indigo-500/20 text-indigo-300 rounded text-xs">Responsive</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Academic Achievement -->
+                    <div class="glass rounded-xl p-6 text-center card-hover achievement-card hover:border-amber-500 border border-transparent">
+                        <div class="achievement-icon bg-gradient-to-br from-amber-500/20 to-orange-700/20 mx-auto">
+                            <i class="fas fa-graduation-cap text-amber-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 gradient-text">Academic Excellence</h3>
+                        <p class="text-gray-300 mb-4">
+                            Maintaining a strong <span class="text-yellow-400 font-bold">3.44 GPA</span> 
+                            in Mechatronics Engineering while actively pursuing programming and AI specialization.
+                        </p>
+                        <div class="flex justify-center gap-2">
+                            <span class="px-2 py-1 bg-amber-500/20 text-amber-300 rounded text-xs">3.44 GPA</span>
+                            <span class="px-2 py-1 bg-orange-500/20 text-orange-300 rounded text-xs">Engineering</span>
+                            <span class="px-2 py-1 bg-yellow-500/20 text-yellow-300 rounded text-xs">Academic</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats Counter -->
+                <div class="glass rounded-2xl p-8 max-w-4xl mx-auto card-hover border border-white/10">
+                    <h3 class="text-2xl font-bold mb-8 text-center gradient-text">Achievements in Numbers</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl md:text-5xl font-bold gradient-text mb-2 counter" data-target="8">0</div>
+                            <p class="text-gray-400 font-medium">Professional Certifications</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl md:text-5xl font-bold gradient-text mb-2 counter" data-target="7">0</div>
+                            <p class="text-gray-400 font-medium">Completed Projects</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl md:text-5xl font-bold gradient-text mb-2 counter" data-target="6">0</div>
+                            <p class="text-gray-400 font-medium">Technical Skills</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl md:text-5xl font-bold gradient-text mb-2">3.44</div>
+                            <p class="text-gray-400 font-medium">GPA Score</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-indigo-900/10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Certifications</h2>
+                <div class="certification-grid">
+                    <!-- Certification cards remain the same as before -->
+                    <!-- Introduction to Cybersecurity -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-blue-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Introduction to Cybersecurity</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">Cisco Networking Academy</p>
+                        <p class="text-sm text-gray-400 mb-3">Fundamentals of cybersecurity, threats, and protection mechanisms</p>
+                        <a href="https://www.credly.com/badges/a5745ff1-dab8-4454-8148-662330a3e0a8/public_url" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Python Essentials 1 -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-blue-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Python Essentials 1</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">Cisco Networking Academy</p>
+                        <p class="text-sm text-gray-400 mb-3">Python programming fundamentals and basic syntax</p>
+                        <a href="https://www.credly.com/badges/299e4812-9dc2-474f-8e1b-6d4801a92fac/public_url" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Python Essentials 2 -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-blue-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Python Essentials 2</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">Cisco Networking Academy</p>
+                        <p class="text-sm text-gray-400 mb-3">Advanced Python concepts and object-oriented programming</p>
+                        <a href="https://www.credly.com/badges/e9577b09-0f89-4646-bcac-1ca7f228fe6b/public_url" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Data Visualization Using Python -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-purple-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Data Visualization Using Python</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">IBM</p>
+                        <p class="text-sm text-gray-400 mb-3">Creating visual data representations with Python libraries</p>
+                        <a href="https://www.credly.com/badges/0b6630b2-06a7-441a-84eb-50a262da795a/public_url" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Data Analysis Using Python -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-purple-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Data Analysis Using Python</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">IBM</p>
+                        <p class="text-sm text-gray-400 mb-3">Data processing and analysis techniques using Python</p>
+                        <a href="https://www.credly.com/badges/5d618a36-c1a3-468c-a95c-1199433e3aba/public_url" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Python for Data Science -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-purple-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Python for Data Science</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">IBM</p>
+                        <p class="text-sm text-gray-400 mb-3">Applying Python in data science projects and analysis</p>
+                        <a href="https://www.credly.com/badges/13115626-1891-48ef-8cd4-3e41f031db0b/public_url" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Networking Basics -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-green-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Networking Basics</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">Cisco</p>
+                        <p class="text-sm text-gray-400 mb-3">Network fundamentals, protocols, and communication principles</p>
+                        <a href="https://www.credly.com/badges/217d5484-0fca-4296-9aef-25e1aa380d37/public_url" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Business Email -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-yellow-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Business Email</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">HP Life</p>
+                        <p class="text-sm text-gray-400 mb-3">Professional email communication and management</p>
+                        <a href="https://www.life-global.org/certificate/e036e7a2-e48c-473d-bf08-ef8d4a06d603" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- AI for Beginners -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-pink-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">AI for Beginners</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">HP Life</p>
+                        <p class="text-sm text-gray-400 mb-3">Introduction to artificial intelligence concepts and applications</p>
+                        <a href="https://www.life-global.org/certificate/7872c8bf-d023-44bf-8215-b1294865cf7c" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                    <!-- Getting Started with DevOps on AWS -->
+                    <div class="glass rounded-xl p-6 card-hover hover:border-orange-500/50 border border-transparent">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold gradient-text">Getting Started with DevOps on AWS</h3>
+                            <span class="text-blue-400 text-sm bg-blue-400/20 px-2 py-1 rounded">2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-2">AWS Training & Certification</p>
+                        <p class="text-sm text-gray-400 mb-3">DevOps practices and tools on Amazon Web Services platform</p>
+                        <a href="https://drive.google.com/file/d/1cc-vhLRvMVP7HO3VIjkWDT_xLwkty8uR/view?usp=drive_link" target="_blank" class="inline-flex items-center mt-3 text-blue-400 hover:text-blue-300 transition-colors">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Education</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="glass rounded-2xl p-8 card-hover border-l-4 border-blue-500">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text">Bachelor of Science in Mechatronics Engineering</h3>
+                        <p class="text-xl text-blue-400 mb-4">Al-Balqa Applied University – Faculty of Engineering Technology</p>
+                        <p class="text-gray-400 mb-6">2024 – Present (Expected Graduation: 2028)</p>
+                        <div class="space-y-4">
+                            <p class="text-gray-300">
+                                Currently pursuing a comprehensive mechatronics engineering degree with focus on:
+                            </p>
+                            <ul class="text-gray-300 list-disc pl-5 space-y-2">
+                                <li>Integration of mechanical systems with electronics and programming</li>
+                                <li>Robotics and automation principles</li>
+                                <li>Control systems and instrumentation</li>
+                                <li>Embedded systems development</li>
+                                <li>Industrial automation and PLC programming</li>
+                            </ul>
+                            <p class="text-gray-300">
+                                The program emphasizes practical application through laboratory work, projects, and industry-relevant 
+                                problem-solving. Maintaining focus on the convergence of mechanical engineering, electronics, 
+                                computer science, and control engineering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-indigo-900/10">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">Get In Touch</h2>
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="glass rounded-2xl p-8 card-hover border border-white/10">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope text-blue-400 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium">Email</h4>
+                                    <a href="mailto:albohasi.mohammad@gmail.com" class="text-gray-300 hover:text-blue-400 block">albohasi.mohammad@gmail.com</a>
+                                    <a href="mailto:albohasi.mo@gmail.com" class="text-gray-300 hover:text-blue-400 block">albohasi.mo@gmail.com</a>
+                                    <a href="mailto:mg.albohasi@gmail.com" class="text-gray-300 hover:text-blue-400 block">mg.albohasi@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone text-blue-400 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium">Phone</h4>
+                                    <a href="tel:+962785416479" class="text-gray-300 hover:text-blue-400">+962 78 541 6479</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-blue-400 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium">Location</h4>
+                                    <p class="text-gray-300">Amman, Jordan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-bold mb-4 gradient-text">Connect with me</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.linkedin.com/in/mohammad-albohasi-787151341" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-blue-600 transition-colors hover:scale-110" aria-label="LinkedIn Profile">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/bohasi" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-blue-600 transition-colors hover:scale-110" aria-label="GitHub Profile">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.credly.com/users/mohammad-albohasi" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-blue-600 transition-colors hover:scale-110" aria-label="Credly Certifications">
+                                    <i class="fas fa-award"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-8 card-hover border border-white/10">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Send Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Name *</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                                <div class="text-red-400 text-sm mt-1 hidden" id="nameError">Please enter your name</div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                                <div class="text-red-400 text-sm mt-1 hidden" id="emailError">Please enter a valid email address</div>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-300 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-300 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"></textarea>
+                                <div class="text-red-400 text-sm mt-1 hidden" id="messageError">Please enter your message</div>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-lg font-medium transition-colors transform hover:scale-[1.02]">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 glass border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Mohammad Al-Bohasi. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a>
+                    <a href="#privacy" class="text-gray-400 hover:text-blue-400 transition-colors">Privacy</a>
+                    <a href="#terms" class="text-gray-400 hover:text-blue-400 transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading screen
+            setTimeout(() => {
+                const loader = document.getElementById('loadingScreen');
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
+
+            // Initialize skill bars
+            animateSkillBars();
+            
+            // Initialize scroll animations
+            setupScrollAnimations();
+            
+            // Setup mobile menu
+            setupMobileMenu();
+            
+            // Setup form handling
+            setupContactForm();
+            
+            // Setup achievement counters
+            setupAchievementCounters();
+            
+            // Setup navbar scroll effect
+            setupNavbarScroll();
+        });
+
+        // Navbar scroll effect
+        function setupNavbarScroll() {
+            const navbar = document.getElementById('mainNav');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Add/remove scrolled class based on scroll position
+                if (currentScroll > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Hide/show navbar on scroll
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    // Scrolling down
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    navbar.style.transform = 'translateY(0)';
+                }
+                
+                lastScroll = currentScroll;
+            });
+        }
+
+        // Skill bar animation
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width') || '0%';
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+
+        // Scroll animations
+        function setupScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'skills') {
+                            animateSkillBars();
+                        }
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Calculate offset for fixed navbar
+                        const navbarHeight = document.getElementById('mainNav').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Mobile menu functionality with overlay
+        function setupMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const closeMobileMenuButton = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+            function openMobileMenu() {
+                mobileMenu.classList.add('open');
+                mobileMenuOverlay.classList.add('active');
+                mobileMenuButton.setAttribute('aria-expanded', 'true');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.remove('open');
+                mobileMenuOverlay.classList.remove('active');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+            closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+            // Close menu when clicking links
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                    closeMobileMenu();
+                }
+            });
+        }
+
+        // Contact form handling
+        function setupContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Reset errors
+                document.querySelectorAll('[id$="Error"]').forEach(el => el.classList.add('hidden'));
+                
+                // Validate form
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                let isValid = true;
+                
+                if (!name) {
+                    document.getElementById('nameError').classList.remove('hidden');
+                    isValid = false;
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email || !emailRegex.test(email)) {
+                    document.getElementById('emailError').classList.remove('hidden');
+                    isValid = false;
+                }
+                
+                if (!message) {
+                    document.getElementById('messageError').classList.remove('hidden');
+                    isValid = false;
+                }
+                
+                if (!isValid) return;
+                
+                // Simulate form submission
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+
+        // Achievement counters animation
+        function setupAchievementCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 1500; // 1.5 seconds
+                        const step = target / (duration / 16); // 60fps
+                        let current = 0;
+                        
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                setTimeout(updateCounter, 16);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        
+                        updateCounter();
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => {
+                observer.observe(counter);
+            });
+        }
+
+        // Global close mobile menu function
+        window.closeMobileMenu = function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        // Print functionality
+        window.addEventListener('beforeprint', () => {
+            document.body.classList.add('printing');
+        });
+        
+        window.addEventListener('afterprint', () => {
+            document.body.classList.remove('printing');
+        });
+    </script>
+</body>
+</html>
